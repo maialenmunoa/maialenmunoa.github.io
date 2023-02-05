@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="h-full">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Happy coding - Jekyllwind</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fraunces">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
-  <body>
-    <div class="py-24 max-w-xl mx-auto text-center">
-  <h1 class="text-xl mb-12">
-    <span class="text-4xl block">
-      Jekyllwind
-    </span>
-
-    <span class="uppercase font-light">
-      A Jekyll + Tailwind CSS boilerplate :)
-    </span>
-  </h1>
-
-  <h2>Build something beautiful with it ✌️</h2>
+  <body class="h-full bg-gray-100">
+    <div class="flex flex-row min-h-full">
+      <div class="w-full min-h-full fixed md:relative md:basis-1/4">
+        <div id="menu" class="absolute transition-[left] -left-full md:left-0 w-full h-full bg-white md:border-r border-gray-200 flex items-center justify-center">
+          <div>Menu</div>
+        </div>
+        <div id="toggleMenu" class="visible md:invisible absolute bottom-4 right-4 cursor-pointer rounded-full bg-white w-14 h-14 leading-[3.5rem] text-center material-icons text-3xl text-gray-400 drop-shadow-[0px_4px_6px_rgba(0,0,0,0.4)]">&#xe5d2;</div>
+        <div id="whatsappButton" class="visible md:invisible absolute bottom-4 right-[5.5rem] cursor-pointer rounded-full bg-white w-14 h-14 drop-shadow-[0px_4px_6px_rgba(0,0,0,0.4)]">
+          <div class="flex items-center justify-center w-full h-full">
+            <div><svg style="color: rgb(156, 163, 175);" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" fill="#9ca3af"></path> </svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:basis-3/4 flex items-center justify-center p-10 pb-20 md:pb-4">
+        <div class="w-full md:flex md:flex-row">
+    <div class="w-full md:basis-1/3 flex justify-center md:items-center md:justify-end">
+        <img class="rounded-full border-8 border-white drop-shadow-xl" src="/images/profilepic.jpg">
+    </div>
+    <div class="w-full md:basis-2/3 md:ml-20">
+        <div class="text-gray-500 mt-10 md:mt-0"><div class="inline-block w-10 h-1.5 border-t border-gray-500"></div>&nbsp;&nbsp;¡Hola!</div>
+        <h1 class="my-2 md:mt-3 md:mb-4 font-serif font-bold">
+            <div class="text-lg md:leading-normal md:text-[4rem] md:inline-block">Soy&nbsp;</div><div class="text-5xl md:leading-normal md:text-[4rem] md:inline-block">Maialen <br class="md:hidden">Muñoa</div>
+        </h1>
+        <h2 class="text-lg md:text-[1.9rem] leading-5 md:leading-7 my-3 md:my-4 font-serif font-bold">Periodista Especializada <br class="md:hidden">en Moda y Belleza</h2>
+        <h5 class="text-xs md:text-base mt-1 mb-5 md:mb-8 text-gray-500">Copywriting · Comunicación<span class="hidden md:inline"> · </span><br class="md:hidden">Social Media · Redacción SEO</h5>
+        <div class="text-center md:text-left">
+            <!--<button class="bg-transparent hover:bg-gray-500 text-gray-500 hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent">-->
+            <button class="bg-white hover:bg-gray-100 text-gray-500 py-2 px-4 rounded-full drop-shadow-xl">
+                ¿Hablamos?
+            </button>
+        </div>
+    </div>
 </div>
 
+      </div>
+    </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+  <script>
+    $("#toggleMenu").click(function(){
+      if ($("#menu").hasClass("left-0")) {
+        $("#menu").removeClass("left-0");
+        $("#toggleMenu").html("&#xe5d2;");
+      } else {
+        $("#menu").addClass("left-0");
+        $("#toggleMenu").html("&#xe5cd;");
+      }
+    });
+  </script>
 </html>
