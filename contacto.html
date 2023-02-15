@@ -47,8 +47,8 @@
 
         <a href="tel:+34624060584" class="mb-4 lg:mb-6 bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl inline-block">
             <span class="material-icons align-text-bottom text-[1.3rem]">&#xe0b0;</span> +34 624 060 584
-        </a>&nbsp;
-        <a href="mailto:hola@maialenmunoa.com" class="mb-4 lg:mb-6 bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl inline-block">
+        </a>
+        <a href="mailto:hola@maialenmunoa.com" class="mb-4 lg:mb-6 sm:ml-4 bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl inline-block">
             <span class="material-icons align-text-bottom text-[1.3rem]">&#xe158;</span> hola@maialenmunoa.com
         </a>
 
@@ -62,14 +62,16 @@
                 <input type="email" name="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl border-white drop-shadow-xl border-2 focus:border-sky-700" placeholder="Un correo electrónico" required>
             </div>
             <div>
-                <textarea name="mensaje" class="h-16 md:h-32 resize-none block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl drop-shadow-xl border-white border-2 focus:border-sky-700" placeholder="Tu mensaje..." required></textarea>
+                <textarea name="mensaje" class="h-24 md:h-32 resize-none block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl drop-shadow-xl border-white border-2 focus:border-sky-700" placeholder="Tu mensaje..." required></textarea>
             </div>
             <button id="enviar" type="submit" class="bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl disabled:cursor-wait">
                 <span class="material-icons align-text-bottom text-[1.3rem]">&#xe163;</span> Enviar
             </button>
+            <p id="ok" class="hidden target:block sm:target:inline-block sm:ml-4 text-green-900"><span class="material-icons align-text-bottom text-[1.3rem]">&#xe876;</span> Mensaje enviado correctamente.</p>
+            <p id="error" class="hidden target:block sm:target:inline-block sm:ml-4 text-red-900"><span class="material-icons align-text-bottom text-[1.3rem]">&#xe000;</span> Error al enviar, por favor, utiliza otra forma de contacto.</p>
         </form>
 
-        <p id="ok" class="hidden target:block mt-4 lg:mt-6 text-green-900"><span class="material-icons align-text-bottom text-[1.3rem]">&#xe876;</span> Mensaje enviado correctamente.</p>
+        <p class="text-xs mt-4 lg:mt-6 text-gray-400 italic">Powered by <a href="https://getform.io" target="_blank">getform.io</a></p>
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
@@ -96,17 +98,31 @@
                         },
                     })
                     .then(response => {
-                        window.location.hash = "#ok";
-
-                        $("#enviar").removeAttr("disabled");
-                        $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe163;</span> Enviar");
-                        $(this).trigger("reset");
-                        $(this).find("[required]")
-                            .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+                        if (response.ok) {
+                            window.location.hash = "#ok";
+                            formReset();
+                        }
+                        else {
+                            window.location.hash = "#error";
+                            formReset();
+                        }
                     })
-                    .catch(error => console.log(error));
+                    .catch(error => {
+                        console.log(error);
+
+                        window.location.hash = "#error";
+                        formReset();
+                    });
                 });
             });
+
+            function formReset() {
+                $("#enviar").removeAttr("disabled");
+                $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe163;</span> Enviar");
+                $(this).trigger("reset");
+                $(this).find("[required]")
+                    .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+            }
         </script>
     </div>
 </div>
