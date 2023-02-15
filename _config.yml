@@ -1,0 +1,17 @@
+url: 'https://maialenmunoa.com'
+baseurl: ''
+title: 'Maialen Muñoa'
+
+plugins:
+  - jekyll-postcss
+
+include: ['_pages']
+
+postcss:
+  cache: false
+
+exclude:
+  - package.json
+  - postcss.config.js
+  - tailwind.config.js
+  - yarn.lock

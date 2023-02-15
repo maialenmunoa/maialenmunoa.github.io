@@ -1,0 +1,51 @@
+---
+---
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:focus, *:active {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+/*.mark {
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+    border-radius: 0.8em 0.3em;
+    background: transparent linear-gradient(
+        to right,
+        rgba(255, 225, 0, 0.1),
+        rgba(255, 225, 0, 0.7) 4%,
+        rgba(255, 225, 0, 0.3)
+    ) no-repeat bottom right;
+    background-size: 100% 65%;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}*/
+
+.mark {
+    position: relative;
+}
+
+.mark::before {
+    content: "";
+    position: absolute;
+    width: 105%;
+    height: 65%;
+    bottom: -0.1rem;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.8em 0.3em;
+    background: transparent linear-gradient(
+        to right,
+        rgba(255, 225, 0, 0.05),
+        rgba(255, 225, 0, 0.5) 4%,
+        rgba(255, 225, 0, 0.2)
+    ) no-repeat;
+    transform: rotate(-1deg);
+  }
+  
