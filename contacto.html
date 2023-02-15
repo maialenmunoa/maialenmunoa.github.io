@@ -54,7 +54,7 @@
 
         <p class="mb-4 lg:mb-6 text-gray-800">O si prefieres, escríbeme a través de este formulario 👇</p>
       
-        <form id="contacto" action="https://mailthis.to/maialenmunoa" class="space-y-4" method="POST">
+        <form id="contacto" action="#enviando" class="space-y-4" method="POST">
             <div>
                 <input type="text" name="nombre" class="drop-shadow-xl bg-gray-50 border-white text-gray-900 text-sm rounded-3xl border-2 block w-full p-3 focus:border-sky-700" placeholder="¿Cómo te llamas?" required>
             </div>
@@ -62,11 +62,9 @@
                 <input type="email" name="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl border-white drop-shadow-xl border-2 focus:border-sky-700" placeholder="Un correo electrónico" required>
             </div>
             <div>
-                <textarea name="mensaje" rows="6" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl drop-shadow-xl border-white border-2 focus:border-sky-700" placeholder="Tu mensaje..." required></textarea>
+                <textarea name="mensaje" class="h-16 md:h-32 resize-none block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl drop-shadow-xl border-white border-2 focus:border-sky-700" placeholder="Tu mensaje..." required></textarea>
             </div>
-            <input type="hidden" name="_after" value="https://maialenmunoa.com/contacto#ok">
-            <input type="hidden" name="_honeypot" value="">
-            <button type="submit" class="bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl">
+            <button id="enviar" type="submit" class="bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl disabled:cursor-wait">
                 <span class="material-icons align-text-bottom text-[1.3rem]">&#xe163;</span> Enviar
             </button>
         </form>
@@ -75,15 +73,41 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                $('[type="submit"]').on('click', function () {
+                $("[type='submit']").click(function() {
                     $(this)
-                        .closest('form')
-                        .find('[required]')
-                        .addClass('invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500');
+                        .closest("form")
+                        .find("[required]")
+                        .addClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+                });
+             
+                $("#contacto").submit(function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(e.target);
+
+                    $("#enviar").attr("disabled", "");
+                    $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe5d5;</span> Enviando...");
+                    window.location.hash = "#contacto";
+
+                    fetch("https://getform.io/f/d531b1ae-82d2-4f74-b974-876520cc7c14", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "Accept": "application/json",
+                        },
+                    })
+                    .then(response => {
+                        window.location.hash = "#ok";
+
+                        $("#enviar").removeAttr("disabled");
+                        $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe163;</span> Enviar");
+                        $(this).trigger("reset");
+                        $(this).find("[required]")
+                            .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+                    })
+                    .catch(error => console.log(error));
                 });
             });
         </script>
-
     </div>
 </div>
 
@@ -97,6 +121,7 @@
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>-->
   <script>
     $("#toggleMenu").click(function(){
       if ($("#menu").hasClass("left-0")) {
