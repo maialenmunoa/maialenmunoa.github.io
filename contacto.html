@@ -91,7 +91,7 @@
                     window.location.hash = "#contacto";
 
                     fetch("https://getform.io/f/d531b1ae-82d2-4f74-b974-876520cc7c14", {
-                        method: "POST",
+                        method: "POST", 
                         body: formData,
                         headers: {
                             "Accept": "application/json",
@@ -100,7 +100,7 @@
                     .then(response => {
                         if (response.ok) {
                             window.location.hash = "#ok";
-                            formReset();
+                            formReset(true);
                         }
                         else {
                             window.location.hash = "#error";
@@ -116,12 +116,15 @@
                 });
             });
 
-            function formReset() {
+            function formReset(cleanup = false) {
                 $("#enviar").removeAttr("disabled");
                 $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe163;</span> Enviar");
-                $(this).trigger("reset");
-                $(this).find("[required]")
-                    .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+
+                if (cleanup) {
+                    $("#contacto").trigger("reset");
+                    $("#contacto").find("[required]")
+                        .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
+                }
             }
         </script>
     </div>
