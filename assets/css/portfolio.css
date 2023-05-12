@@ -1,0 +1,27 @@
+#popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup .bg-white {
+    width: 80%;
+    max-width: 1200px;
+}
+
+#popup .grid {
+    height: calc(100% - 40px);
+}
+
+#popup .grid > div {
+    height: 100%;
+}
+
+#popup-image {
+    border-radius: 0.5rem;
+}
+
+#popup-content {
+    overflow-y: auto;
+    height: 100%;
+}

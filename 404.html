@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="theme-color" content="#E5E7EB">
-    <title>Contacto - Maialen Muñoa</title>
+    <title>404 - Página no encontrada - Maialen Muñoa</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:300,400,500,700">
@@ -38,94 +38,15 @@
         </div>
       </div>
       <div class="w-full min-h-screen lg:basis-3/4 flex items-center justify-center z-0">
-        <div class="min-h-screen w-full flex bg-[url('/images/background_contact_bw.jpg')] bg-center bg-cover -z-10 justify-center">
+        <div class="min-h-screen w-full flex bg-center bg-cover -z-10 justify-center">
     <div class="basis-full sm:basis-4/5 xl:basis-2/3 px-6 pt-8 md:p-10 pb-24 sm:pb-10 2xl:px-20 m-auto w-full">
-        <h1 class="text-3xl sm:text-4xl w-full mb-6 sm:mb-10 font-serif font-bold"><span class="mark">Contacto</span></h1>
-            
-        <p class="mb-4 lg:mb-6 text-gray-800">Las mejores ideas surgen de una buena conversación. ¿Nos tomamos un café? ☕</p>
-
-        <a href="tel:+34624060584" class="mb-4 lg:mb-6 bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl inline-block">
-            <span class="material-icons align-text-bottom text-[1.3rem]">&#xe0b0;</span> +34 624 060 584
-        </a>
-        <a href="mailto:hola@maialenmunoa.com" class="mb-4 lg:mb-6 sm:ml-4 bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl inline-block">
-            <span class="material-icons align-text-bottom text-[1.3rem]">&#xe158;</span> hola@maialenmunoa.com
-        </a>
-
-        <p class="mb-4 lg:mb-6 text-gray-800">O si prefieres, escríbeme a través de este formulario 👇</p>
-      
-        <form id="contacto" action="#enviando" class="space-y-4" method="POST">
-            <div>
-                <input type="text" name="nombre" class="drop-shadow-xl border-white text-gray-900 text-sm rounded-3xl border-2 block w-full p-3 focus:border-sky-700" placeholder="¿Cómo te llamas?" required>
-            </div>
-            <div>
-                <input type="email" name="email" class="block p-3 w-full text-sm text-gray-900 rounded-3xl border-white drop-shadow-xl border-2 focus:border-sky-700" placeholder="Un correo electrónico" required>
-            </div>
-            <div>
-                <textarea name="mensaje" class="h-24 md:h-32 resize-none block p-3 w-full text-sm text-gray-900 rounded-3xl drop-shadow-xl border-white border-2 focus:border-sky-700" placeholder="Tu mensaje..." required></textarea>
-            </div>
-            <button id="enviar" type="submit" class="bg-white hover:bg-gray-100 py-2 px-4 rounded-full drop-shadow-xl disabled:cursor-wait">
-                <span class="material-icons align-text-bottom text-[1.3rem]">&#xe163;</span> Enviar
-            </button>
-            <p id="ok" class="hidden target:block sm:target:inline-block sm:ml-4 text-green-900"><span class="material-icons align-text-bottom text-[1.3rem]">&#xe876;</span> Mensaje enviado correctamente.</p>
-            <p id="error" class="hidden target:block sm:target:inline-block sm:ml-4 text-red-900"><span class="material-icons align-text-bottom text-[1.3rem]">&#xe000;</span> Error al enviar, por favor, utiliza otra forma de contacto.</p>
-        </form>
-
-        <p class="text-xs mt-4 lg:mt-6 text-gray-400 italic">Powered by <a href="https://getform.io" target="_blank">getform.io</a></p>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                $("[type='submit']").click(function() {
-                    $(this)
-                        .closest("form")
-                        .find("[required]")
-                        .addClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
-                });
-             
-                $("#contacto").submit(function(e) {
-                    e.preventDefault();
-                    const formData = new FormData(e.target);
-
-                    $("#enviar").attr("disabled", "");
-                    $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe5d5;</span> Enviando...");
-                    window.location.hash = "#contacto";
-
-                    fetch("https://getform.io/f/d531b1ae-82d2-4f74-b974-876520cc7c14", {
-                        method: "POST", 
-                        body: formData,
-                        headers: {
-                            "Accept": "application/json",
-                        },
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            window.location.hash = "#ok";
-                            formReset(true);
-                        }
-                        else {
-                            window.location.hash = "#error";
-                            formReset();
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-
-                        window.location.hash = "#error";
-                        formReset();
-                    });
-                });
-            });
-
-            function formReset(cleanup = false) {
-                $("#enviar").removeAttr("disabled");
-                $("#enviar").html("<span class='material-icons align-text-bottom text-[1.3rem]'>&#xe163;</span> Enviar");
-
-                if (cleanup) {
-                    $("#contacto").trigger("reset");
-                    $("#contacto").find("[required]")
-                        .removeClass("invalid:border-rose-300 invalid:text-red-500 invalid:focus:border-red-500");
-                }
-            }
-        </script>
+        <h1 class="text-3xl sm:text-4xl w-full mb-6 sm:mb-10 font-serif font-bold text-center"><span class="mark">Página no encontrada</span></h1>
+        
+        <div class="text-sm w-full sm:text-base text-gray-800">
+            <p class="my-3 sm:my-4 w-full text-center"><img class="inline" src="/images/broken-link.png"></p>
+            <p class="my-3 sm:my-4 w-full text-center">La página que estás buscando no existe, lo siento :(</p>
+            <p class="my-3 sm:my-4 w-full text-center">Puedes probar volver al <a class="underline" href="/">inicio</a> o hacer cualquier otra cosa, estás en tu casa.</p>
+        </div> 
     </div>
 </div>
 
