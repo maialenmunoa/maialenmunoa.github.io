@@ -4,8 +4,8 @@ title: "Laura Escribano"
 date: "2022-01-01"
 categories: 
   - "web"
-coverImage: "portfolio/web-laura-escribano-01.jpg"
-permalink: web/laura-escribano
+coverImage: "/images/portfolio/web-laura-escribano-01.jpg"
+#permalink: web/laura-escribano
 ---
 
 #### \-Un blog-

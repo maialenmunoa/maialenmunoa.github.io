@@ -4,8 +4,8 @@ title: "Cristina Lobato"
 date: "2021-01-01"
 categories: 
   - "web"
-coverImage: "portfolio/web-cristina-lobato-01.jpg"
-permalink: web/cristina-lobato
+coverImage: "/images/portfolio/web-cristina-lobato-01.jpg"
+#permalink: web/cristina-lobato
 ---
 
 #### \-Un blog-

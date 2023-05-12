@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:300,400,500,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
+    {% if page.css %}
+      <script src="{{ page.css }}" ></script>
+    {% endif %}
     <link rel="icon" sizes="192x192" href="/images/android-chrome-192x192.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
   </head>
   <body class="h-full bg-gray-100">
     <div class="flex flex-row min-h-full">
-      <div id="menu" class="w-full min-h-full fixed lg:static lg:flex lg:basis-1/4 print:invisible transition-[left] -left-full lg:left-0 bg-white md:border-r border-gray-200 z-10">
+      <div id="menu" class="w-full min-h-full fixed lg:static lg:flex lg:basis-1/4 print:invisible transition-[left] -left-full lg:left-0 bg-white md:border-r border-gray-200 z-10 lg:z-auto">
         <div class="w-full h-screen flex overflow-auto">
           {% include menu.html %}
         </div>
@@ -50,6 +53,9 @@
               $(this).addClass("text-black");
           }
       });
-  });
+    });
   </script>
+  {% if page.script %}
+    <script src="{{ page.script }}" ></script>
+  {% endif %}
 </html>
