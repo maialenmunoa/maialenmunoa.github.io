@@ -11,7 +11,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
     
-      <link rel="stylesheet" href="/assets/css/portfolio.css">
+      
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+      
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
+      
+        <link rel="stylesheet" href="/assets/css/portfolio.css">
+      
     
     <link rel="icon" sizes="192x192" href="/images/android-chrome-192x192.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -43,8 +49,10 @@
         <div class="min-h-screen w-full flex bg-center bg-cover -z-10 justify-center">
     <div class="basis-full sm:basis-4/5 xl:basis-2/3 px-6 pt-8 md:p-10 pb-24 sm:pb-10 2xl:px-20 m-auto w-full">
         
-        <h1 class="text-3xl sm:text-4xl w-full mb-6 sm:mb-10 font-serif font-bold"><span class="mark">Web</span></h1>
-        <div class="text-sm w-full sm:text-base text-gray-800"></div> 
+        <h1 class="text-3xl sm:text-4xl w-full mb-4 sm:mb-6 font-serif font-bold"><span class="mark">Web</span></h1>
+        <p class="text-sm w-full sm:text-base text-gray-800 mb-6 sm:mb-10">
+            Diseño y desarrollo web a medida: una selección de mis proyectos más destacados.
+        </p> 
 
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             
@@ -52,63 +60,51 @@
             <div class="rounded-md aspect-video drop-shadow-md overflow-hidden hover:drop-shadow-lg">
                 <a class="portfolio-button block cursor-pointer h-full w-full bg-center bg-cover transition-transform hover:transform hover:scale-110"
                     style="background-image: url('/images/portfolio/web-laura-escribano-01.jpg');"
-                    data-image-src="/images/portfolio/web-laura-escribano-01.jpg"
-                    data-post-content="&lt;h2 class=&quot;text-xl mt-6 mb-2 font-semibold&quot;&gt;Web de Laura Escribano&lt;/h2&gt;
+                    data-image-src="/images/portfolio/web-laura-escribano-01.jpg,/images/portfolio/web-laura-escribano-02.jpg,/images/portfolio/web-laura-escribano-03.jpg,/images/portfolio/web-laura-escribano-04.jpg,/images/portfolio/web-laura-escribano-movil-01.jpg,/images/portfolio/web-laura-escribano-movil-02.jpg,/images/portfolio/web-laura-escribano-movil-03.jpg,/images/portfolio/web-laura-escribano-movil-04.jpg,/images/portfolio/web-laura-escribano-movil-05.jpg"
+                    data-post-content="&lt;h2 class=&quot;text-xl mb-2 font-semibold&quot;&gt;Web de Laura Escribano&lt;/h2&gt;
 &lt;p&gt;Web de la diseñadora de vestidos de novia Laura Escribano y eshop.&lt;/p&gt;">
                 </a>
             </div>
             
-
-
-            
-            
             <div class="rounded-md aspect-video drop-shadow-md overflow-hidden hover:drop-shadow-lg">
                 <a class="portfolio-button block cursor-pointer h-full w-full bg-center bg-cover transition-transform hover:transform hover:scale-110"
                     style="background-image: url('/images/portfolio/web-cristina-lobato-01.jpg');"
-                    data-image-src="/images/portfolio/web-cristina-lobato-01.jpg"
-                    data-post-content="&lt;h2 class=&quot;text-xl mt-6 mb-2 font-semibold&quot;&gt;Web de Cristina Lobato&lt;/h2&gt;
+                    data-image-src="/images/portfolio/web-cristina-lobato-01.jpg,/images/portfolio/web-cristina-lobato-02.jpg,/images/portfolio/web-cristina-lobato-03.jpg,/images/portfolio/web-cristina-lobato-04.jpg"
+                    data-post-content="&lt;h2 class=&quot;text-xl mb-2 font-semibold&quot;&gt;Web de Cristina Lobato&lt;/h2&gt;
 &lt;p&gt;Web de la maquilladora con su perfil profesional y servicios.&lt;/p&gt;">
                 </a>
             </div>
             
-
-
-            
-            
             <div class="rounded-md aspect-video drop-shadow-md overflow-hidden hover:drop-shadow-lg">
                 <a class="portfolio-button block cursor-pointer h-full w-full bg-center bg-cover transition-transform hover:transform hover:scale-110"
                     style="background-image: url('/images/portfolio/web-lamarye-01.jpg');"
-                    data-image-src="/images/portfolio/web-lamarye-01.jpg"
-                    data-post-content="&lt;h2 class=&quot;text-xl mt-6 mb-2 font-semibold&quot;&gt;Web de Lamaryé&lt;/h2&gt;
+                    data-image-src="/images/portfolio/web-lamarye-01.jpg,/images/portfolio/web-lamarye-02.jpg,/images/portfolio/web-lamarye-03.jpg,/images/portfolio/web-lamarye-04.jpg"
+                    data-post-content="&lt;h2 class=&quot;text-xl mb-2 font-semibold&quot;&gt;Web de Lamaryé&lt;/h2&gt;
 
 &lt;p&gt;Web de las diseñadoras de vestido de novia Lamaryé.&lt;/p&gt;">
                 </a>
             </div>
             
-
-
-            
-            
-        </div>
-
-                   
+        </div>                
 
     </div>
 </div>
 
-<div id="popup" class="fixed top-0 left-0 h-screen w-full z-50 bg-black bg-opacity-50 hidden">
-    <div class="container mx-auto h-full my-10">
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg h-[calc(100%-5rem)]">
-            <div class="grid grid-rows-4 h-full">
-                <div class="row-span-3">
-                    <img id="popup-image" src="" alt="" class="w-full h-full object-cover">
+<div id="popup" class="fixed top-0 left-0 h-screen w-full z-50 bg-white sm:bg-black bg-opacity-50 sm:bg-opacity-50 hidden">
+    <div class="container mx-auto h-[calc(100%-2.5rem)] mt-10 sm:mb-10 sm:h-[calc(100%-5rem)]">
+        <div class="bg-white sm:rounded-lg overflow-hidden shadow-lg h-full">
+            <div class="grid grid-rows-3 sm:grid-rows-1 grid-cols-1 sm:grid-cols-3 h-full">
+                <div class="row-span-2 sm:row-span-1 col-span-1 sm:col-span-2 w-full overflow-hidden">
+                    <div id="popup-carousel" class="slick-carousel h-full">
+                        <!-- Images will be dynamically added here -->
+                    </div>
                 </div>
-                <div id="popup-content" class="p-6 row-span-1">
+                <div id="popup-content" class="p-6 row-span-1 col-span-1">
                 </div>
             </div>            
         </div>
     </div>
-    <div id="popup-close" class="absolute top-0 right-0 p-4 text-white font-extralight text-4xl cursor-pointer h-12 w-12 leading-4 flex justify-center">×</div>      
+    <div id="popup-close" class="absolute top-0 right-0 p-3 sm:text-white font-extralight text-4xl cursor-pointer h-10 w-10 leading-4 flex justify-center">×</div>      
 </div>
       </div>
       <div id="toggleMenu" class="visible select-none lg:invisible print:invisible fixed bottom-4 right-4 cursor-pointer rounded-full bg-white w-14 h-14 leading-[3.5rem] text-center material-icons text-3xl text-gray-700 drop-shadow-[0px_4px_6px_rgba(0,0,0,0.4)] z-20">&#xe5d2;</div>
@@ -119,7 +115,9 @@
       </div>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  
   <!--<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>-->
   <script>
     $("#toggleMenu").click(function(){
@@ -141,6 +139,10 @@
     });
   </script>
   
-    <script src="/assets/js/portfolio.js" ></script>
+    
+      <script src="/assets/js/portfolio.js"></script>
+    
+      <script src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    
   
 </html>
