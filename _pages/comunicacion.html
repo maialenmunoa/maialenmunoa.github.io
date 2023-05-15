@@ -36,19 +36,20 @@ css:
     </div>
 </div>
 
-<div id="popup" class="fixed top-0 left-0 h-screen w-full z-50 bg-white sm:bg-black bg-opacity-50 sm:bg-opacity-50 hidden">
-    <div class="container mx-auto h-[calc(100%-2.5rem)] mt-10 sm:mb-10 sm:h-[calc(100%-5rem)]">
-        <div class="bg-white sm:rounded-lg overflow-hidden shadow-lg h-full">
-            <div class="grid grid-rows-3 sm:grid-rows-1 grid-cols-1 sm:grid-cols-3 h-full">
-                <div class="row-span-2 sm:row-span-1 col-span-1 sm:col-span-2 w-full overflow-hidden">
-                    <div id="popup-carousel" class="slick-carousel h-full">
+<div id="popup" class="fixed top-0 left-0 h-screen w-full z-50 bg-white lg:bg-black lg:bg-opacity-50 hidden">
+    <div class="lg:container mx-auto h-[calc(100%-5.5rem)] mb-[5.5rem] lg:mb-10 lg:mt-10 lg:h-[calc(100%-5rem)]">
+        <div class="bg-white lg:rounded-lg overflow-hidden shadow-lg h-full">
+            <div class="grid grid-rows-5 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 h-full overflow-auto">
+                <div id="popup-carousel-container" class="row-span-3 lg:row-span-1 col-span-1 lg:col-span-2 w-full overflow-hidden bg-center bg-cover border-b lg:border-b-0 lg:border-r border-gray-100">
+                    <div id="popup-carousel" class="slick-carousel h-full backdrop-blur-md">
                         <!-- Images will be dynamically added here -->
                     </div>
                 </div>
-                <div id="popup-content" class="p-6 row-span-1 col-span-1">
+                <div id="popup-content" class="p-6 row-span-2 col-span-1">
                 </div>
             </div>            
         </div>
     </div>
-    <div id="popup-close" class="absolute top-0 right-0 p-3 sm:text-white font-extralight text-4xl cursor-pointer h-10 w-10 leading-4 flex justify-center">×</div>      
+    <div id="popup-close" class="hidden lg:flex absolute top-0 right-0 p-3 text-white font-extralight text-4xl cursor-pointer h-10 w-10 leading-4 justify-center">×</div>      
+    <div id="popup-close-mobile" class="visible select-none lg:invisible print:invisible fixed bottom-4 right-4 cursor-pointer rounded-full bg-white w-14 h-14 leading-[3.5rem] text-center material-icons text-3xl text-gray-700 drop-shadow-[0px_4px_6px_rgba(0,0,0,0.4)] z-20">&#xe5c4;</div>
 </div>

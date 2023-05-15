@@ -31,6 +31,15 @@ $(document).ready(function() {
         // Agregar el contenido HTML al popup
         $("#popup-carousel").html(slickHtml);
         
+        $(".slick-slide img").on("load", function() {
+            var $img = $(this);
+            if ($img[0].naturalWidth > $img[0].naturalHeight 
+                && ($img[0].naturalWidth > $img.parent().width() || $img[0].naturalHeight > $img.parent().height())) {
+                $img.css("object-fit", "cover");
+                $img.css("object-position", "top center");
+            }
+        });
+
         // Inicializar el carrusel
         $("#popup-image-carousel").slick({
             dots: true,
@@ -39,21 +48,23 @@ $(document).ready(function() {
         });
         
         $("#popup-content").html(postContent);
-        
+        $("#popup-carousel-container").css("background-image", "url('" + imageList[0] + "')");
+
         // Mostrar el popup
         $("#popup").removeClass("hidden");
         $("body").addClass("popup-opened");
     });
 
     $("#popup").click(function(event) {
-        if (event.target.id === "popup") {
-            $("#popup").addClass("hidden");
-            $("body").removeClass("popup-opened");
-        }
+        if (event.target.id === "popup") popupClose()
     });
 
-    $("#popup-close").click(function() {
+    $("#popup-close").click(popupClose);
+
+    $("#popup-close-mobile").click(popupClose);
+
+    function popupClose() {
         $("#popup").addClass("hidden");
         $("body").removeClass("popup-opened");
-    });
+    }
 });
