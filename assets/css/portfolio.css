@@ -1,3 +1,7 @@
+.popup-opened {
+    overflow: hidden;
+}
+
 .popup-opened #whatsappButton,
 .popup-opened #toggleMenu {
     z-index: -1;
@@ -11,8 +15,8 @@
 }
 
 #popup-image-carousel img {
-    object-fit: cover;
-    object-position: top center;
+    object-fit: scale-down;
+    object-position: center center;
 }
 
 .slick-prev,
